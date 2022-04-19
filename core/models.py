@@ -118,3 +118,19 @@ class Ferramentas2(Base):
     
     def __str__(self) -> str:
         return self.titulo
+
+
+class Testemunhas(Base):
+    imagem = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb': {'width': 75, 'height': 75, 'crop': True}})
+    nome = models.CharField('Nome', max_length=20)
+    cargo = models.CharField('Cargo', max_length=20)
+    descricao = models.TextField('Descrição', max_length=100)
+
+
+    class Meta:
+        verbose_name = 'Testemunha'
+        verbose_name_plural = 'Testemunhas'
+
+
+    def __str__(self) -> str:
+        return self.nome

@@ -2,7 +2,7 @@ from django.views.generic import FormView
 from django.urls import reverse_lazy
 from django.contrib import messages
 
-from .models import Servico, Funcionario, Ferramentas1, Ferramentas2
+from .models import Servico, Funcionario, Ferramentas1, Ferramentas2, Testemunhas
 from .forms import ContatoForm
 
 class IndexView(FormView):
@@ -16,6 +16,7 @@ class IndexView(FormView):
         ctx['funcionarios'] = Funcionario.objects.all()
         ctx['ferramenta1'] = Ferramentas1.objects.order_by('?').all()
         ctx['ferramenta2'] = Ferramentas2.objects.order_by('?').all()
+        ctx['testemunhas'] = Testemunhas.objects.order_by('?').all()
         return ctx
 
     
