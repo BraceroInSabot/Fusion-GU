@@ -1,0 +1,56 @@
+{% load static %}
+<section id="contact" class="section-padding bg-gray">    
+    <div class="container">
+      <div class="section-header text-center">          
+        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Contate-nos</h2>
+        <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+      </div>
+      <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.3s">   
+        <div class="col-lg-7 col-md-12 col-sm-12">
+          <div class="contact-block">
+            <!-- Alteração aqui! Tag form e import de token! -->
+            <form id="contato" method="post" action="{% url 'index' %}">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!-- última alteração! trocamos os atribs. placeholder, name e id pelas nossas variáveis em forms.py -->
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required data-error="Please enter your name">
+                    <div class="help-block with-errors"></div>
+                  </div>                                 
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="E-mail"required data-error="Please enter your email">
+                    <div class="help-block with-errors"></div>
+                  </div> 
+                </div>
+                 <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="assunto" name='assunto' placeholder="Assunto" required data-error="Please enter your subject">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group"> 
+                    <textarea class="form-control" id="mensagem" placeholder="Mensagem" name="mensagem" rows="7" data-error="Write your message" required></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="submit-button text-left">
+                    <button class="btn btn-common" id="form-submit" type="submit">Enviar E-mail</button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                    <div class="clearfix"></div> 
+                  </div>
+                </div>
+              </div>            
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-xs-12">
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30475102.76491077!2d-66.83835440000001!3d-21.187974799999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bea7d2e6a1c48b%3A0x9cdf3a613fdc66f6!2sDjango%20Country!5e0!3m2!1spt-BR!2sbr!4v1650300112079!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </section>
