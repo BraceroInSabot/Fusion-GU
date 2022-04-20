@@ -95,6 +95,11 @@ DATABASES = {
 }
 """
 
+# dj_database_url
+DATABASE = {
+    'default': dj_database_url.config()
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -143,7 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Fase de DESENVOLVIMENTO
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Fase de PRODUÇÃO
