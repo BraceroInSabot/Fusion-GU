@@ -96,7 +96,7 @@ DATABASES = {
 """
 
 # dj_database_url
-DATABASE = {
+DATABASES = {
     'default': dj_database_url.config()
 }
 
